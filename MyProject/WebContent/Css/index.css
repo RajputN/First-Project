@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+*
+{
+	margin:0px; 
+	
+}
+body{
+	
+}
+
+
+
+.form-border{
+	 border:2px solid;
+	 height:500px; width:400px; 
+	 margin-left:35%;
+	 padding:5px;
+	background-color:#DEB887; 
+	
+}
+
+.label1{
+	 padding:6px;
+	 font-family:Tahoma, Arial, Sans-serif 24px;
+	 font-weight:bold;
+	 color:black;
+	 background-color:white;
+    margin:3px;
+}
+
+.form-border h3{
+	text-align:center;
+	margin:20px;
+}
+
+#btn{
+	  margin:30px;
+	  padding:5px;  
+	 }
+	 
+b\	 
