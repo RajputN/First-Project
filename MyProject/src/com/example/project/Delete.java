@@ -16,16 +16,12 @@ import javax.servlet.http.HttpSession;
 public class Delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    ;
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    ;
 	       
 	       HttpSession ss=request.getSession();
 	         String nm=(String)ss.getAttribute("ky");
 	       
-	           
-	       
-	         
-	         UserDao ud= new DaoImpl();
+	      UserDao ud= new DaoImpl();
 	         int val=ud.delete(nm);
 	         
 	         if( val>0)   {

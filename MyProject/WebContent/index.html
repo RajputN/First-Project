@@ -2,28 +2,34 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <link  href="Css/index.css"    rel="stylesheet"/>
-<title>Login Page</title>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"  href="index.css">
 </head>
 <body>
-  <form method="post"  action="LoginServlet"  class="form-border">
+
+<form method="post"  action="LoginServlet"  class="form-border">
    
-    <h3 > User Login</h3>
-    
-   <label class="label1 "> UserName: </label>
-                               
+                                                                            <h4 > Sign In</h4>
+    <div class="label1 ">
+   <label>  UserName: </label>                             
    <input type="text" name="username"/> <br/>
    
-  <label class="label1"> Password: </label> 
+  <label > Password: </label> 
   <input type="password" name="password"/>  <br/>
+  </div>
+  
   
   <input  id="btn" type="submit" value="Sign In" />
-  <a  href="UserSignUp.html"  >Sign Up</a> <br/>
+  
+  
+  <div class="linkdiv">
+  <p>New to the Website ?</p>   
+  <a  href="UserSignUp.html"  >Sign Up</a><br/>
+ 
   
   <a  href="admin.html"  >Admin Login</a>
-   
+  </div> 
  </form>
-
 
 
 </body>

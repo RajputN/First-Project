@@ -1,6 +1,8 @@
 package com.example.product;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UpdateProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+     
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	                    int id=Integer.parseInt(request.getParameter("pid"));
+	                    int id=Integer.parseInt(request.getParameter("id"));
 	                    String name= request.getParameter("pname");
 	                    String url= request.getParameter("url");
 	                    int categoryid=Integer.parseInt(request.getParameter("cate")) ;
@@ -29,6 +31,22 @@ public class UpdateProductServlet extends HttpServlet {
 	                    pod.setDesciption(description);
 	                    pod.setPrice(price);
 	                    pod.setQuantity(quantity);
+	                    
+	                    ProductDao pdao=new ProductDaoImpl();
+	                    
+	                    int status=pdao.update(pod);
+	                    if(status==1) {
+	                    	 request.getRequestDispatcher("/ShowProducts.jsp").forward(request, response);
+	                      }
+	                    else {
+	                    	 request.getRequestDispatcher("/UpdateProducts.jsp").forward(request, response);
+	                    }
+	                    
+	         
+	                    
+	                    
+	                    
+	                    
 	                    
 	                    
 	}

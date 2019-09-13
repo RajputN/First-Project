@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+           <form action="UpdateProductServlet"  method="get">  <br/>
+                    Product Id<input type= "text"  name="pid">  <br/>
+                   Product name<input type="text" name="pname">  <br/>
+                   URL<input type="file" name="url"> <br/>
+                   Category<input type="text" name="cate">  <br/>
+                   Description<input type="text" name="des"> <br/>
+                   Price<input type="text" name="price"> <br/>
+                   Quantity<input type="text" name="quant"> <br/>
+                 <br/> <br/>
+                   <input type="submit"  value="UpdateProduct">
+                
+                </form>
 </body>
 </html>

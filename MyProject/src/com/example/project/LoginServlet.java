@@ -76,8 +76,6 @@ public class LoginServlet extends HttpServlet {
 		     {
 		    	 HttpSession ss= request.getSession();
 		    	 ss.setAttribute("ky" ,n);
-		    	 
-		    	  
 		    	 RequestDispatcher  rd= request.getRequestDispatcher("/Welcome.jsp");
           	   rd.forward(request, response);
 		     }else

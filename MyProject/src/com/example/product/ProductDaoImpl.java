@@ -43,39 +43,46 @@ public class ProductDaoImpl implements ProductDao {
 	
 	
 	@Override
-	public int delete(Product obj1) {
-		
-		return 0;
+	public int delete(int id) {
+		  int rs=0;
+		   try {
+			   con=ConnectionProvider.getConnection();
+			  ps=con.prepareStatement("Delete from product where  id=?");
+			  System.out.println(id);
+			  ps.setInt(1, id);
+			  rs=ps.executeUpdate();
+			  
+		} catch (SQLException e) {
+			
+						e.printStackTrace();
+		}
+		   
+		return rs;
 	}
 	
 	
 	
 	
 	@Override
-	public List<Product> update() {
-	 
+	public int update(Product p) {
+	 int rs=0;
 	  try {
-		  list= new ArrayList<Product>();
+		  
 		  con=ConnectionProvider.getConnection();
-		ps=con.prepareStatement("Select * from Product");
-		  ResultSet res= ps.executeQuery();
-		  while(res.next()) {
-			  Product pod= new Product();
-			  pod.setId(res.getInt(1));
-			  pod.setName(res.getString(2));
-              pod.setUrl(res.getString(3));
-              pod.setCategoryid(res.getInt(4));
-              pod.setDesciption(res.getString(5));
-              pod.setPrice(res.getInt(6));
-              pod.setQuantity(res.getInt(7));
-			  
-			list.add(pod);	
-			}
+		ps=con.prepareStatement("Update Product   set name=?, url=? ,	CATEGORYID=? ,	DESCRIPTION=?,  	PRICE=?,  	QUANTITY=?  where id=?");
+		    ps.setString(1, p.getName());
+		    ps.setString(2, p.getUrl());
+		    ps.setInt(3, p.getCategoryid());
+		    ps.setString(4, p.getDescription());
+		    ps.setInt(5, p.getPrice());
+		    ps.setInt(6, p.getQuantity());
+		    
+	       rs=ps.executeUpdate();
 	} catch (SQLException e) {
 		
 		e.printStackTrace();
 	}
-		return list;
+		return rs;
 	}
 
 	

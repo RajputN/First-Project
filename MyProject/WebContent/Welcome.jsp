@@ -7,20 +7,19 @@
 <title>Welcome Page</title>
 </head>
 <body>
-  <h1>WELCOME USER!!!</h1> 
- <%
+  <h1>WELCOME USER  Page!!!</h1> 
+                 Welcome ${ky} 
+                 
+    
  
-        String nm=(String)session.getAttribute("ky");
-          out.println( "Welcome "+  nm);
- %>
+  
+<form action="LogoutServlet" >
+ <input type="submit"  value="Logout">
+</form> 
  
-
- 
- 
- 
- <a href=UpdateUser.jsp>Click for Update</a><br/>
- <form action="Delete" method="post">
-  <button>Remove Account</button>
+ <br/><a href=UpdateUser.jsp>Click for Update</a><br/>
+ <br><form action="Delete" method="post">
+  <br><button>Remove Account</button>
 </form>
  
 </body>

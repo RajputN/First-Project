@@ -9,7 +9,8 @@
 </head>
 <body>
 
-<form> <h1>All Products</h1> 
+ <form method="post">
+  <h1>All Products</h1> 
   <table>
        <thead>
      <tr>
@@ -24,6 +25,7 @@
        
        </thead>
        
+                              
        <tbody>
        <c:forEach  items="${value}"    var="images" >
               <tr>
@@ -34,8 +36,12 @@
                   <td>${images.description} </td> 
                   <td>${images.price} </td> 
                  <td>${images.quantity} </td> 
-             </tr>
-             
+                 <td>
+                  <input type= "submit"  formaction="DeleteProduct?pid=${images.id}"   value="Delete">
+                  <input type= "submit" formaction="UpdateProduct.jsp?id=${images.id}" value="Update">
+                  </td>
+             </tr>   <br>
+ 
        </c:forEach>
        </tbody>
   
